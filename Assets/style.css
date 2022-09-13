@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: :'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+body{
+    background: #fff;
+    min-height: 100vh;
+}
+header{
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+    z-index: 1000;
+}
+p{
+    text-align: justify;
+    text-justify: inter-word;
+}
+.logo{
+    height: 60px;
+    line-height: 60px;
+    color: black;
+    font-weight: 700;
+    font-size: 2em;
+    text-decoration: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 20px;
+    text-decoration: none;
+    pointer-events: none;
+}
+#toggle{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    background: #010101;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+#toggle::before{
+    content: '';
+    position: absolute;
+    width: 28px;
+    height: 2px;
+    background: #fff;
+    transform: translateY(-5px);
+    transition: 0.2s;
+}
+#toggle::after{
+    content: '';
+    position: absolute;
+    width: 28px;
+    height: 2px;
+    background: #fff;
+    transform: translateY(5px);
+    transition: 0.2s;
+}
+#toggle.active::before{
+    transform: translateY(0px) rotate(45deg);
+}
+#toggle.active::after{
+    transform: translateY(0px) rotate(-45deg);
+}
+#toggle.active{
+    background: #FE0101;
+}
+#navbar{
+    position: relative;
+    height: 60px;
+    right: 60px;
+    background: #fff;
+    transition: 0.5s;
+    width: 0px;
+    overflow: hidden;
+}
+#navbar.active{
+    width: 758px;
+}
+#navbar ul{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+#navbar ul li{
+    list-style: none;
+}
+#navbar ul li a{
+    color: black;
+    height: 60px;
+    line-height: 60px;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 1.px;
+    padding: 0 15px;
+    letter-spacing: 2px;
+}
+#navbar ul li a:hover{
+    color: white;
+    background-color: black;
+}
+section{
+    position: relative;
+    display: flex;
+    min-height: 100vh;
+}
+
+@media(max-width: 991px){
+    #navbar{
+        position: fixed;
+        bottom: -100%;
+        right: 0;
+        width: 100%;
+        transition: 0.5s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #navbar.active{
+        height: calc(100vh - 60px);
+        bottom: 0;
+        width: 100%;
+    }
+    #navbar ul{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+#introduction{
+    padding: 100px;
+}
+#workhistory{
+    padding: 100px;
+}
+#education{
+    padding: 100px;
+}
+#feats{
+    padding: 100px;
+}
+#skillset{
+    padding: 100px;
+}
+#contactme{
+    padding: 100px;
+}
+.image-face{
+    widows: 50px;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+.image-face {
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    border:10px solid #010101;
+}
+.image-lap{
+    height: 300px;
+    width: 300px;
+}
+#workhistory{
+    padding: 100px;
+}
+.scrollTop{
+    position: fixed;
+    bottom: 1000px;
+    right: 40px;
+    width: 60px;
+    height: 60px;
+    background: #fff url(Images/black%20Up%20arrow.png);
+    border-radius: 50%;
+    background-size: 40px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    z-index: 100000;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+.scrollTop.active{
+    bottom: 40px;
+    visibility: visible;
+    opacity: 1;
+}
+
+
+::-webkit-scrollbar{
+    width: 0;
+}
+
+#scrollPath{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 10px;
+    height: 100%;
+    background: rgba(255,255,255,0.05);
+}
+#progressbar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 10px;
+    background: black;
+    animation: animate 5s linear infinite;
+}
+@keyframes animate{
+    0%,100%{
+        filter:hue-rotate(0deg);
+    }50%{
+        filter:hue-rotate(360deg);
+    }
+}
+
+#progressbar:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    filter: blur(10px);
+}
+#progressbar:after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    filter: blur(30px);
+}
